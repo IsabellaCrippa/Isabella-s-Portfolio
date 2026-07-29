@@ -1,10 +1,10 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Code2, Server, GraduationCap, Briefcase } from "lucide-react";
+import { Code2, Server, GraduationCap, Briefcase } from "lucide-react"; // imports  to help the code gets pretty
 
 export default function About() {
-    const cardVariants: Variants = {
+    const cardVariants: Variants = { // this is the logic of motion, makes a casquete effct 
         hidden: { opacity: 0, y: 20 },
         visible: (i: number) => ({
             opacity: 1,
@@ -17,7 +17,7 @@ export default function About() {
         }),
     };
 
-    return (
+    return ( // here it is what shows up
         <section id="about" className="py-24 px-4 bg-zinc-950 text-white relative overflow-hidden">
             <div className="max-w-5xl mx-auto">
 
