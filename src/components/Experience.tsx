@@ -7,7 +7,7 @@ export default function Experience() {
     const { t } = useLanguage();
 
     return (
-        <section id="experience" className="py-24 px-8 bg-zinc-950 text-white relative overflow-hidden">
+        <section id="experience" className="py-24 px-8 bg-background text-foreground transition-colors relative overflow-hidden">
             <div className="max-w-4xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -16,10 +16,10 @@ export default function Experience() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                    <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-white">
                         {t.experience.title}
                     </h2>
-                    <p className="text-zinc-400 max-w-xl mx-auto text-sm sm:text-base font-light">
+                    <p className="text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto text-sm sm:text-base font-light">
                         {t.experience.subtitle}
                     </p>
                 </motion.div>
@@ -32,13 +32,13 @@ export default function Experience() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="border-l-2 border-indigo-500 pl-6 space-y-2 relative group"
+                            className="border-l-2 border-indigo-600 dark:border-indigo-500 pl-6 space-y-2 relative group"
                         >
-                            <div className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-indigo-500 ring-4 ring-zinc-950" />
-                            <span className="text-sm text-indigo-400 font-semibold">{exp.period}</span>
-                            <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                            <p className="text-sm text-zinc-400 font-medium">{exp.company}</p>
-                            <p className="text-zinc-300 leading-relaxed font-light text-sm sm:text-base">{exp.description}</p>
+                            <div className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-indigo-600 dark:bg-indigo-500 ring-4 ring-white dark:ring-zinc-950 transition-all" />
+                            <span className="text-sm text-indigo-600 dark:text-indigo-400 font-semibold">{exp.period}</span>
+                            <h3 className="text-xl font-bold text-zinc-900 dark:text-white">{exp.role}</h3>
+                            <p className="text-sm text-zinc-600 dark:text-zinc-400 font-medium">{exp.company}</p>
+                            <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed font-light text-sm sm:text-base">{exp.description}</p>
                         </motion.div>
                     ))}
                 </div>

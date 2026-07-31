@@ -73,7 +73,7 @@ export default function Projects() {
     ];
 
     return (
-        <section id="projects" className="py-24 px-4 bg-zinc-950 text-white relative overflow-hidden">
+        <section id="projects" className="py-24 px-4 bg-background text-foreground transition-colors relative overflow-hidden">
             <div className="max-w-6xl mx-auto">
                 
                 {/* Section Header */}
@@ -84,10 +84,10 @@ export default function Projects() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                    <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-white">
                         {t.projects.title}
                     </h2>
-                    <p className="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base font-light">
+                    <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base font-light">
                         {t.projects.subtitle}
                     </p>
                 </motion.div>
@@ -104,11 +104,11 @@ export default function Projects() {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 backdrop-blur-md hover:border-zinc-700 transition-all flex flex-col justify-between group"
+                            className="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 backdrop-blur-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex flex-col justify-between group shadow-sm dark:shadow-none"
                         >
                             <div>
                                 <div className="flex items-center justify-between mb-4">
-                                    <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center gap-1">
+                                    <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/20 flex items-center gap-1">
                                         <Sparkles className="h-3 w-3" />
                                         {project.highlight}
                                     </span>
@@ -119,7 +119,7 @@ export default function Projects() {
                                                 href={project.github} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
-                                                className="text-zinc-400 hover:text-white transition-colors p-1.5 rounded-lg bg-zinc-800/50 hover:bg-zinc-800"
+                                                className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors p-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200 dark:hover:bg-zinc-800"
                                                 aria-label="GitHub Repository"
                                             >
                                                 <Code2 className="h-4 w-4" />
@@ -130,7 +130,7 @@ export default function Projects() {
                                                 href={project.link} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
-                                                className="text-zinc-400 hover:text-white transition-colors p-1.5 rounded-lg bg-zinc-800/50 hover:bg-zinc-800"
+                                                className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors p-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200 dark:hover:bg-zinc-800"
                                                 aria-label="Live Website"
                                             >
                                                 <ExternalLink className="h-4 w-4" />
@@ -139,19 +139,19 @@ export default function Projects() {
                                     </div>
                                 </div>
 
-                                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+                                <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-xs sm:text-sm text-zinc-400 mb-6 font-light leading-relaxed">
+                                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mb-6 font-light leading-relaxed">
                                     {project.description}
                                 </p>
                             </div>
 
-                            <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-800/60">
+                            <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-100 dark:border-zinc-800/60">
                                 {project.tags.map((tag, tagIndex) => (
                                     <span
                                         key={tagIndex}
-                                        className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-zinc-800/60 text-zinc-300 border border-zinc-700/40"
+                                        className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800/60 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/40"
                                     >
                                         {tag}
                                     </span>
