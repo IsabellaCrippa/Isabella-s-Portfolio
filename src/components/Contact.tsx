@@ -1,9 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Briefcase, Code2, Send } from "lucide-react";
+import { Mail, Briefcase, Code2 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Contact() {
+    const { t } = useLanguage();
+
     return (
         <section id="contact" className="py-24 px-4 bg-zinc-950 text-white relative overflow-hidden">
             <div className="max-w-4xl mx-auto text-center">
@@ -17,10 +20,10 @@ export default function Contact() {
                     className="mb-12"
                 >
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-                        Get In Touch
+                        {t.contact.title}
                     </h2>
                     <p className="text-zinc-400 max-w-xl mx-auto text-sm sm:text-base font-light">
-                        I&apos;m currently open to new opportunities, collaborations, and discussions about full-stack development or corporate systems. Feel free to reach out!
+                        {t.contact.subtitle}
                     </p>
                 </motion.div>
 
@@ -40,7 +43,7 @@ export default function Contact() {
                             <Mail className="h-5 w-5" />
                         </div>
                         <div className="text-left">
-                            <p className="text-xs text-zinc-400">Email Me</p>
+                            <p className="text-xs text-zinc-400">{t.contact.emailLabel}</p>
                             <p className="text-sm font-medium text-white">isabellacrippa.p@gmail.com</p>
                         </div>
                     </a>
@@ -55,7 +58,7 @@ export default function Contact() {
                             <Briefcase className="h-5 w-5" />
                         </div>
                         <div className="text-left">
-                            <p className="text-xs text-zinc-400">LinkedIn</p>
+                            <p className="text-xs text-zinc-400">{t.contact.linkedinLabel}</p>
                             <p className="text-sm font-medium text-white">Isabella Crippa</p>
                         </div>
                     </a>
@@ -70,7 +73,7 @@ export default function Contact() {
                             <Code2 className="h-5 w-5" />
                         </div>
                         <div className="text-left">
-                            <p className="text-xs text-zinc-400">GitHub</p>
+                            <p className="text-xs text-zinc-400">{t.contact.githubLabel}</p>
                             <p className="text-sm font-medium text-white">@IsabellaCrippa</p>
                         </div>
                     </a>
@@ -78,7 +81,7 @@ export default function Contact() {
 
                 {/* Footer Credits */}
                 <div className="pt-8 border-t border-zinc-800/60 text-center text-xs text-zinc-500">
-                    <p>© {new Date().getFullYear()} Isabella Crippa. Built with Next.js &amp; Tailwind CSS.</p>
+                    <p>© {new Date().getFullYear()} Isabella Crippa. {t.contact.footer}</p>
                 </div>
 
             </div>

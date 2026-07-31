@@ -1,9 +1,12 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Code, Database, Server, Wrench, Layers } from "lucide-react";
+import { Code, Database, Server, Wrench } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Skills() {
+    const { t } = useLanguage();
+
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -28,22 +31,22 @@ export default function Skills() {
 
     const skillCategories = [
         {
-            title: "Frontend & Web",
+            title: t.skills.frontend.title,
             icon: <Code className="h-5 w-5 text-indigo-400" />,
             skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript", "HTML5 / CSS3"],
         },
         {
-            title: "Backend & Systems",
+            title: t.skills.backend.title,
             icon: <Server className="h-5 w-5 text-violet-400" />,
             skills: ["Java", "Node.js", "Express", "REST APIs", "Spring Boot", "Algorithms"],
         },
         {
-            title: "Database & Data",
+            title: t.skills.database.title,
             icon: <Database className="h-5 w-5 text-emerald-400" />,
             skills: ["SQL", "PostgreSQL", "MySQL", "Database Modeling", "Query Optimization"],
         },
         {
-            title: "Tools & Corporate",
+            title: t.skills.tools.title,
             icon: <Wrench className="h-5 w-5 text-sky-400" />,
             skills: ["Git & GitHub", "Android Studio", "ERP Modules", "Fiscal Systems (NF-e/NFS-e)", "Debugging"],
         },
@@ -62,10 +65,10 @@ export default function Skills() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-                        Skills &amp; Technologies
+                        {t.skills.title}
                     </h2>
                     <p className="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base font-light">
-                        The tools, languages, and technologies I use to bring ideas and corporate systems to life.
+                        {t.skills.subtitle}
                     </p>
                 </motion.div>
 

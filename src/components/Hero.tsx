@@ -1,27 +1,30 @@
 "use client";
 
-import { motion } from "framer-motion";  // create a animation libery, fluid
-import { Mail, ArrowRight } from "lucide-react"; // gives the icons i need
+import { motion } from "framer-motion"; 
+import { Mail, ArrowRight } from "lucide-react"; 
+import { useLanguage } from "@/context/LanguageContext";
 
-export default function Hero() { //logic of the animation
+export default function Hero() { 
+    const { t } = useLanguage();
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.15, // make a delay between each animaation (cascete)
-                delayChildren: 0.1, // a little delay to make the stufs pretty
+                staggerChildren: 0.15, 
+                delayChildren: 0.1, 
             },
         },
     };
 
     const itemVariants = {
-        hidden: { y: 20, opacity: 0 }, //starts invisible
+        hidden: { y: 20, opacity: 0 }, 
         visible: {
             y: 0,
             opacity: 1,
             transition: {
-                type: "spring" as const, //this make the thinks smooth
+                type: "spring" as const, 
                 stiffness: 100,
                 damping: 15,
             },
@@ -36,7 +39,7 @@ export default function Hero() { //logic of the animation
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_60%,transparent_100%)] pointer-events-none" />
 
             <motion.div
-                variants={containerVariants} // the cointeiner says how wich of the childs will gonna be firtst
+                variants={containerVariants}
                 initial="hidden"
                 animate="visible"
                 className="relative z-10 max-w-4xl mx-auto flex flex-col items-center"
@@ -47,7 +50,7 @@ export default function Hero() { //logic of the animation
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                         </span>
-                        <span>👋 Computer Science Student &amp; Full-Stack Developer</span>
+                        <span>👋 {t.hero.role}</span>
                     </div>
                 </motion.div>
 
@@ -62,6 +65,7 @@ export default function Hero() { //logic of the animation
                     variants={itemVariants}
                     className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light px-4 sm:px-0"
                 >
+                    {t.hero.description}
                 </motion.p>
 
                 <motion.div
@@ -72,14 +76,14 @@ export default function Hero() { //logic of the animation
                         href="mailto:isabellacrippadev@gmail.com"
                         className="group relative inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-indigo-600 text-white rounded-full font-medium shadow-[0_0_20px_rgba(99,102,241,0.2)] transition-all hover:bg-indigo-500 hover:shadow-[0_0_35px_rgba(99,102,241,0.4)] hover:-translate-y-0.5 active:translate-y-0 text-sm sm:text-base"
                     >
-                        Get in Touch
+                        {t.hero.contactMe}
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </a>
                     <a
                         href="#projects"
                         className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm text-zinc-300 rounded-full font-medium transition-all hover:border-zinc-600 hover:bg-zinc-800/60 hover:-translate-y-0.5 active:translate-y-0 text-sm sm:text-base"
                     >
-                        View Projects
+                        {t.hero.viewProjects}
                     </a>
                 </motion.div>
 
@@ -137,4 +141,3 @@ export default function Hero() { //logic of the animation
         </section>
     );
 }
-

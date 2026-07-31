@@ -2,8 +2,11 @@
 
 import { motion, Variants } from "framer-motion";
 import { ExternalLink, Code2, Sparkles } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Projects() {
+    const { t } = useLanguage();
+
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -28,44 +31,44 @@ export default function Projects() {
 
     const projectsList = [
         {
-            title: "Backup Retention & Cleanup Script",
-            description: "Python automation script to clean up local/remote backup directories using custom retention rules per folder with pathlib, solving storage overflow and saving manual workflow time.",
+            title: t.projects.backup.title,
+            description: t.projects.backup.description,
             tags: ["Python", "Automation", "Pathlib", "Workflow Optimization"],
             link: null,
             github: "https://github.com/IsabellaCrippa/Backup-Retention-Cleanup-Script",
-            highlight: "Automation Tool",
+            highlight: t.projects.backup.highlight,
         },
         {
-            title: "Interstate ICMS Calculator",
-            description: "React web tool designed to automate interstate ICMS tax rate lookups based on origin, destination, final consumer status, and imported product rules to avoid invoice rejection friction.",
+            title: t.projects.icms.title,
+            description: t.projects.icms.description,
             tags: ["React", "JavaScript", "JSON", "Tax Automation"],
             link: null,
             github: "https://github.com/IsabellaCrippa/Interstate-ICMS-Tax-on-the-Circulation-of-Goods-and-Services-Calculator",
-            highlight: "Full-Stack / Utility",
+            highlight: t.projects.icms.highlight,
         },
         {
-            title: "Dog Adoption App (TCC)",
-            description: "Mobile application focused on connecting dogs with new families using a matching concept. Built as part of the Computer Science final thesis project.",
+            title: t.projects.dogApp.title,
+            description: t.projects.dogApp.description,
             tags: ["Mobile", "Full-Stack", "UI/UX", "Database"],
             link: null,
             github: "https://github.com/IsabellaCrippa",
-            highlight: "Em Desenvolvimento (Início)",
+            highlight: t.projects.dogApp.highlight,
         },
         {
-            title: "FastRun Eventos",
-            description: "Website for running event promotion, focusing on the Circuito Corrida do Fogo in Rio Grande do Sul. Developed collaboratively using WordPress, HTML, CSS, and JavaScript.",
+            title: t.projects.fastRun.title,
+            description: t.projects.fastRun.description,
             tags: ["WordPress", "HTML5", "CSS3", "JavaScript"],
             link: "https://www.fastruneventos.com.br",
             github: null,
-            highlight: "Featured Project",
+            highlight: t.projects.fastRun.highlight,
         },
         {
-            title: "Feijoada do Rancho",
-            description: "Complete visual identity and official website project. Includes full branding, logo creation, t-shirt mockups, and web design integration using Photoshop and modern web development.",
+            title: t.projects.feijoada.title,
+            description: t.projects.feijoada.description,
             tags: ["Branding", "UI/UX", "Photoshop", "Web Design"],
             link: null,
             github: null,
-            highlight: "Design & Dev",
+            highlight: t.projects.feijoada.highlight,
         },
     ];
 
@@ -82,10 +85,10 @@ export default function Projects() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-                        Featured Projects
+                        {t.projects.title}
                     </h2>
                     <p className="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base font-light">
-                        A showcase of python automation tools, tax calculation apps, web development, and academic research.
+                        {t.projects.subtitle}
                     </p>
                 </motion.div>
 

@@ -1,10 +1,13 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Code2, Server, GraduationCap, Briefcase } from "lucide-react"; // imports  to help the code gets pretty
+import { Code2, Server, GraduationCap, Briefcase } from "lucide-react"; 
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
-    const cardVariants: Variants = { // this is the logic of motion, makes a casquete effct 
+    const { t } = useLanguage();
+
+    const cardVariants: Variants = { 
         hidden: { opacity: 0, y: 20 },
         visible: (i: number) => ({
             opacity: 1,
@@ -17,7 +20,7 @@ export default function About() {
         }),
     };
 
-    return ( // here it is what shows up
+    return ( 
         <section id="about" className="py-24 px-4 bg-zinc-950 text-white relative overflow-hidden">
             <div className="max-w-5xl mx-auto">
 
@@ -30,10 +33,10 @@ export default function About() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-                        About Me
+                        {t.about.title}
                     </h2>
                     <p className="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base font-light">
-                        Combining academic rigor with hands-on enterprise software development.
+                        {t.about.subtitle}
                     </p>
                 </motion.div>
 
@@ -48,15 +51,11 @@ export default function About() {
                         transition={{ duration: 0.6 }}
                         className="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed font-light"
                     >
+                        <p>{t.about.p1}</p>
                         <p>
-                            Hello! I am a Computer Science student at UNESC, deeply passionate about building robust, scalable applications and solving complex engineering challenges.
+                            {t.about.p2_start} <strong className="text-white font-medium">{t.about.p2_highlight}</strong> {t.about.p2_end}
                         </p>
-                        <p>
-                            My professional focus lies in <strong className="text-white font-medium">full-stack software development</strong> and corporate systems, where I frequently work with technologies like Java, Node.js, SQL, React, and modern web infrastructure.
-                        </p>
-                        <p>
-                            Whether it is architecting backend logic, implementing business rules, or refining responsive user interfaces, I am dedicated to delivering clean code and high-performance user experiences.
-                        </p>
+                        <p>{t.about.p3}</p>
                     </motion.div>
 
                     {/* Highlights / Mini Cards */}
@@ -73,8 +72,8 @@ export default function About() {
                             <div className="h-10 w-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
                                 <GraduationCap className="h-5 w-5" />
                             </div>
-                            <h3 className="font-semibold text-white mb-1">Education</h3>
-                            <p className="text-xs text-zinc-400">Computer Science at UNESC, focusing on core algorithms and architecture.</p>
+                            <h3 className="font-semibold text-white mb-1">{t.about.cards.education.title}</h3>
+                            <p className="text-xs text-zinc-400">{t.about.cards.education.desc}</p>
                         </motion.div>
 
                         <motion.div
@@ -88,8 +87,8 @@ export default function About() {
                             <div className="h-10 w-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 mb-4 group-hover:scale-110 transition-transform">
                                 <Code2 className="h-5 w-5" />
                             </div>
-                            <h3 className="font-semibold text-white mb-1">Full-Stack</h3>
-                            <p className="text-xs text-zinc-400">Building complete web solutions from database logic to interactive user interfaces.</p>
+                            <h3 className="font-semibold text-white mb-1">{t.about.cards.fullstack.title}</h3>
+                            <p className="text-xs text-zinc-400">{t.about.cards.fullstack.desc}</p>
                         </motion.div>
 
                         <motion.div
@@ -103,8 +102,8 @@ export default function About() {
                             <div className="h-10 w-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
                                 <Server className="h-5 w-5" />
                             </div>
-                            <h3 className="font-semibold text-white mb-1">Corporate Systems</h3>
-                            <p className="text-xs text-zinc-400">Experience with enterprise ERP modules, fiscal regulations, and system releases.</p>
+                            <h3 className="font-semibold text-white mb-1">{t.about.cards.corporate.title}</h3>
+                            <p className="text-xs text-zinc-400">{t.about.cards.corporate.desc}</p>
                         </motion.div>
 
                         <motion.div
@@ -118,8 +117,8 @@ export default function About() {
                             <div className="h-10 w-10 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 mb-4 group-hover:scale-110 transition-transform">
                                 <Briefcase className="h-5 w-5" />
                             </div>
-                            <h3 className="font-semibold text-white mb-1">Problem Solver</h3>
-                            <p className="text-xs text-zinc-400">Passionate about optimizing workflows and tackling complex debugging challenges.</p>
+                            <h3 className="font-semibold text-white mb-1">{t.about.cards.problemSolver.title}</h3>
+                            <p className="text-xs text-zinc-400">{t.about.cards.problemSolver.desc}</p>
                         </motion.div>
 
                     </div>
