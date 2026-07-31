@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { ExternalLink, Github, Sparkles } from "lucide-react";
+import { ExternalLink, Code2, Sparkles } from "lucide-react";
 
 export default function Projects() {
     const containerVariants: Variants = {
@@ -119,7 +119,7 @@ export default function Projects() {
                                                 className="text-zinc-400 hover:text-white transition-colors p-1.5 rounded-lg bg-zinc-800/50 hover:bg-zinc-800"
                                                 aria-label="GitHub Repository"
                                             >
-                                                <Github className="h-4 w-4" />
+                                                <Code2 className="h-4 w-4" />
                                             </a>
                                         )}
                                         {project.link && (

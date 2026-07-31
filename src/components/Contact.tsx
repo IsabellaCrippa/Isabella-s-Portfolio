@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Briefcase, Code2, Send } from "lucide-react";
 
 export default function Contact() {
     return (
@@ -52,7 +52,7 @@ export default function Contact() {
                         className="flex items-center gap-3 px-6 py-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 backdrop-blur-md hover:border-violet-500/50 hover:bg-zinc-900/80 transition-all group"
                     >
                         <div className="h-10 w-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 group-hover:scale-110 transition-transform">
-                            <Linkedin className="h-5 w-5" />
+                            <Briefcase className="h-5 w-5" />
                         </div>
                         <div className="text-left">
                             <p className="text-xs text-zinc-400">LinkedIn</p>
@@ -67,7 +67,7 @@ export default function Contact() {
                         className="flex items-center gap-3 px-6 py-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 backdrop-blur-md hover:border-emerald-500/50 hover:bg-zinc-900/80 transition-all group"
                     >
                         <div className="h-10 w-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-                            <Github className="h-5 w-5" />
+                            <Code2 className="h-5 w-5" />
                         </div>
                         <div className="text-left">
                             <p className="text-xs text-zinc-400">GitHub</p>
